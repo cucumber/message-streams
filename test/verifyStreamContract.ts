@@ -1,7 +1,8 @@
 import * as messages from '@cucumber/messages'
-import { Transform } from 'stream'
-import toArray from './toArray.js'
 import assert from 'assert'
+import { Transform } from 'stream'
+
+import toArray from './toArray.js'
 
 export default function verifyStreamContract(
   makeFromMessageStream: () => Transform,

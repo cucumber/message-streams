@@ -1,10 +1,11 @@
 import * as messages from '@cucumber/messages'
-import { MessageToNdjsonStream } from '../src/index.js'
-import assert from 'assert'
-import NdjsonToMessageStream from '../src/NdjsonToMessageStream.js'
-import verifyStreamContract from './verifyStreamContract.js'
-import toArray from './toArray.js'
 import { Envelope } from '@cucumber/messages'
+import assert from 'assert'
+
+import { MessageToNdjsonStream } from '../src/index.js'
+import NdjsonToMessageStream from '../src/NdjsonToMessageStream.js'
+import toArray from './toArray.js'
+import verifyStreamContract from './verifyStreamContract.js'
 
 describe('NdjsonStream', () => {
   const makeToMessageStream = () => new NdjsonToMessageStream()
@@ -86,7 +87,11 @@ describe('NdjsonStream', () => {
 
     const incomingMessages = await toArray(toMessageStream)
 
-    assert.deepStrictEqual(incomingMessages, [new Envelope(), new Envelope(), new Envelope()])
+    assert.deepStrictEqual(incomingMessages, [
+      new Envelope(),
+      new Envelope(),
+      new Envelope(),
+    ])
   })
 
   it('includes offending line in error message', async () => {
@@ -98,7 +103,8 @@ describe('NdjsonStream', () => {
         await toArray(toMessageStream)
       },
       {
-        message: "Unexpected token B in JSON at position 2\nNot JSON: '  BLA BLA'\n",
+        message:
+          "Unexpected token B in JSON at position 2\nNot JSON: '  BLA BLA'\n",
       }
     )
   })
