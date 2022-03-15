@@ -22,7 +22,13 @@ export default class NdjsonToMessageStream extends Transform {
     }
     this.buffer += Buffer.isBuffer(chunk) ? chunk.toString('utf-8') : chunk
     const lines = this.buffer.split('\n')
-    this.buffer = lines.pop()
+
+    if (!lines.length) {
+      callback()
+      return
+    }
+
+    this.buffer = lines.pop() as string
     for (const line of lines) {
       if (line.trim().length > 0) {
         try {
