@@ -2,4 +2,4 @@ _extends: .github
 
 repository:
   name: message-streams
-  description: Stream utilities to read/write Cucumber Message objects to/from streams.
+  description: Stream utilities to read and write Cucumber Message objects to/from streams.
