@@ -13,15 +13,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ([#1756](https://github.com/cucumber/common/pull/1756))
 
 ### Changed
-- "@cucumber/messages": "17.1.1",
-"@cucumber/message-streams": "4.0.0",
-}
-}
-```
 - `@cucumber/messages`is now a peer dependency. You have to add `@cucumber/messages` in your dependencies:
-```diff
-{
-"dependencies": {
+  ```diff
+  {
+    "dependencies": {
+  +   "@cucumber/messages": "17.1.1",
+      "@cucumber/message-streams": "4.0.0",
+    }
+  }
+  ```
 
 ### Deprecated
 
