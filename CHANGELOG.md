@@ -7,6 +7,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Peer dependency of @cucumber/messages is now more permissive and simply request any version greater than 17.1.1
+
 ## [4.0.0] - 2022-03-16
 ### Added
 - Support for EcmaScript modules (aka ESM)
