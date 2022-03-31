@@ -1,6 +1,6 @@
 {
   "name": "@cucumber/message-streams",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Streams for reading/writing messages",
   "type": "module",
   "main": "dist/cjs/src/index.js",
