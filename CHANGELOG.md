@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [4.0.1] - 2022-03-31
+
 ### Changed
 - Peer dependency of @cucumber/messages is now more permissive and simply request any version greater than 17.1.1
 
@@ -48,8 +50,9 @@ by ignoring certain lines.
 
 ## [1.0.0] - 2021-03-23
 
-[Unreleased]: https://github.com/cucumber/message-streams/compare/v4.0.0...main
-[4.0.0]: https://github.com/cucumber/message-streams/compare/v3.0.0...main
+[Unreleased]: https://github.com/cucumber/message-streams/compare/v4.0.1...main
+[4.0.0]: https://github.com/cucumber/message-streams/compare/v4.0.0...v4.0.1
+[4.0.0]: https://github.com/cucumber/message-streams/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/cucumber/message-streams/releases/tag/v3.0.0
 [2.1.0]: https://github.com/cucumber/message-streams/releases/tag/v2.1.0
 [2.0.0]: https://github.com/cucumber/message-streams/releases/tag/v2.0.0
