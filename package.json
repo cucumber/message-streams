@@ -34,7 +34,7 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@cucumber/messages": "^17.1.1",
+    "@cucumber/messages": "^19.0.0",
     "@types/mocha": "9.1.1",
     "@types/node": "17.0.23",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
