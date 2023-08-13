@@ -103,8 +103,7 @@ describe('NdjsonStream', () => {
         await toArray(toMessageStream)
       },
       {
-        message:
-          "Unexpected token B in JSON at position 2\nNot JSON: '  BLA BLA'\n",
+        message: `Unexpected token 'B', "  BLA BLA" is not valid JSON\nNot JSON: '  BLA BLA'\n`,
       }
     )
   })
