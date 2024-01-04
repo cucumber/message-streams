@@ -52,7 +52,7 @@ by ignoring certain lines.
 
 ## [1.0.0] - 2021-03-23
 
-[Unreleased]: https://github.com/cucumber/message-streams/compare/v4.0.1...main
+[Unreleased]: https://github.com/cucumber/message-streams/compare/v4.0.1...HEAD
 [4.0.0]: https://github.com/cucumber/message-streams/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/cucumber/message-streams/compare/v3.0.0...v4.0.0
 [3.0.0]: https://github.com/cucumber/message-streams/releases/tag/v3.0.0
