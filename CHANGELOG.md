@@ -53,11 +53,11 @@ by ignoring certain lines.
 ## [1.0.0] - 2021-03-23
 
 [Unreleased]: https://github.com/cucumber/message-streams/compare/v4.0.1...HEAD
-[4.0.0]: https://github.com/cucumber/message-streams/compare/v4.0.0...v4.0.1
+[4.0.1]: https://github.com/cucumber/message-streams/compare/v4.0.0...v4.0.1
 [4.0.0]: https://github.com/cucumber/message-streams/compare/v3.0.0...v4.0.0
-[3.0.0]: https://github.com/cucumber/message-streams/releases/tag/v3.0.0
-[2.1.0]: https://github.com/cucumber/message-streams/releases/tag/v2.1.0
-[2.0.0]: https://github.com/cucumber/message-streams/releases/tag/v2.0.0
+[3.0.0]: https://github.com/cucumber/message-streams/compare/v2.1.0...v3.0.0
+[2.1.0]: https://github.com/cucumber/message-streams/compare/v2.0.0...v2.1.0
+[2.0.0]: https://github.com/cucumber/message-streams/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/cucumber/message-streams/releases/tag/v1.0.0
 
 
