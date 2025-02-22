@@ -62,7 +62,7 @@ Not JSON: '${line}'
       try {
         const object = JSON.parse(this.buffer)
         this.push(object)
-      } catch (err) {
+      } catch {
         return callback(new Error(`Not JSONs: ${this.buffer}`))
       }
     }
