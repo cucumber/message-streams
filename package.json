@@ -40,8 +40,8 @@
     "@eslint/js": "^9.21.0",
     "@types/mocha": "10.0.10",
     "@types/node": "22.18.1",
-    "@typescript-eslint/eslint-plugin": "^8.35.1 ",
-    "@typescript-eslint/parser": "^8.35.1",
+    "@typescript-eslint/eslint-plugin": "^8.43.0",
+    "@typescript-eslint/parser": "^8.43.0",
     "eslint": "^9.21.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^17.15.1",
@@ -50,7 +50,7 @@
     "mocha": "11.7.2",
     "prettier": "^3.5.2",
     "ts-node": "^10.7.0",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   },
   "peerDependencies": {
     "@cucumber/messages": ">=17.1.1"
