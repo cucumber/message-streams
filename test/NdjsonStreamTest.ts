@@ -1,10 +1,10 @@
 import assert from 'node:assert'
 import { Envelope, TestStepResultStatus } from '@cucumber/messages'
 
-import { MessageToNdjsonStream } from '../src/index.js'
-import NdjsonToMessageStream from '../src/NdjsonToMessageStream.js'
-import toArray from './toArray.js'
-import verifyStreamContract from './verifyStreamContract.js'
+import { MessageToNdjsonStream } from '../src'
+import NdjsonToMessageStream from '../src/NdjsonToMessageStream'
+import toArray from './toArray'
+import verifyStreamContract from './verifyStreamContract'
 
 describe('NdjsonStream', () => {
   const makeToMessageStream = () => new NdjsonToMessageStream()
@@ -95,6 +95,6 @@ describe('NdjsonStream', () => {
       toMessageStream.write('{}\n  BLA BLA\n\n{}\n')
       toMessageStream.end()
       await toArray(toMessageStream)
-    }, /Unexpected token/)
+    }, /Not JSON: ' {2}BLA BLA'/)
   })
 })
