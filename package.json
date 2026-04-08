@@ -2,20 +2,11 @@
   "name": "@cucumber/message-streams",
   "version": "4.0.1",
   "description": "Streams for reading/writing messages",
-  "type": "module",
-  "main": "dist/cjs/src/index.js",
-  "types": "dist/cjs/src/index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "files": [
-    "dist/cjs",
-    "dist/esm"
+    "dist"
   ],
-  "module": "dist/esm/src/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/src/index.js",
-      "require": "./dist/cjs/src/index.js"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/cucumber/message-streams.git"
@@ -23,33 +14,21 @@
   "author": "Cucumber Limited <cukes@googlegroups.com>",
   "license": "MIT",
   "scripts": {
-    "build:cjs": "tsc --build tsconfig.build-cjs.json",
-    "build:esm": "tsc --build tsconfig.build-esm.json",
-    "build": "npm run build:cjs && npm run build:esm",
-    "fix": "eslint --max-warnings 0 --fix src test && prettier --write src test",
-    "lint": "eslint --max-warnings 0 src test && prettier --check src test",
-    "postbuild:cjs": "cp package.cjs.json dist/cjs/package.json",
-    "test": "mocha && npm run test:cjs",
-    "test:cjs": "npm run build:cjs && mocha --no-config dist/cjs/test",
+    "build": "tsc --build tsconfig.build.json",
+    "fix": "biome check --fix --error-on-warnings",
+    "lint": "biome check --error-on-warnings",
+    "test": "mocha \"test/*Test.ts\"",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.10",
+    "@cucumber/biome-config": "cucumber/biome-config#v0.1.0",
     "@cucumber/messages": "^32.0.0",
-    "@eslint/compat": "^2.0.0",
-    "@eslint/eslintrc": "^3.3.0",
-    "@eslint/js": "^9.21.0",
+    "@tsconfig/recommended": "^1.0.13",
     "@types/mocha": "10.0.10",
     "@types/node": "22.19.17",
-    "@typescript-eslint/eslint-plugin": "^8.43.0",
-    "@typescript-eslint/parser": "^8.43.0",
-    "eslint": "^9.21.0",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-n": "^17.15.1",
-    "eslint-plugin-simple-import-sort": "^12.1.1",
-    "globals": "^17.0.0",
     "mocha": "11.7.5",
-    "prettier": "^3.5.2",
-    "ts-node": "^10.7.0",
+    "tsx": "^4.21.0",
     "typescript": "5.9.3"
   },
   "peerDependencies": {
@@ -59,8 +38,5 @@
     "url": "https://github.com/cucumber/message-streams/issues"
   },
   "homepage": "https://github.com/cucumber/message-streams#readme",
-  "directories": {
-    "test": "test"
-  },
   "keywords": []
 }

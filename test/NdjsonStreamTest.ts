@@ -1,11 +1,10 @@
-import * as messages from '@cucumber/messages'
-import { Envelope } from '@cucumber/messages'
-import assert from 'assert'
+import assert from 'node:assert'
+import { Envelope, TestStepResultStatus } from '@cucumber/messages'
 
-import { MessageToNdjsonStream } from '../src/index.js'
-import NdjsonToMessageStream from '../src/NdjsonToMessageStream.js'
-import toArray from './toArray.js'
-import verifyStreamContract from './verifyStreamContract.js'
+import { MessageToNdjsonStream } from '../src'
+import NdjsonToMessageStream from '../src/NdjsonToMessageStream'
+import toArray from './toArray'
+import verifyStreamContract from './verifyStreamContract'
 
 describe('NdjsonStream', () => {
   const makeToMessageStream = () => new NdjsonToMessageStream()
@@ -14,10 +13,10 @@ describe('NdjsonStream', () => {
 
   it('converts a buffer stream written byte by byte', (cb) => {
     const stream = makeToMessageStream()
-    const envelope: messages.Envelope = {
+    const envelope: Envelope = {
       testStepFinished: {
         testStepResult: {
-          status: messages.TestStepResultStatus.UNKNOWN,
+          status: TestStepResultStatus.UNKNOWN,
           duration: { nanos: 0, seconds: 0 },
         },
         testCaseStartedId: '1',
@@ -30,7 +29,7 @@ describe('NdjsonStream', () => {
     }
     const json = JSON.stringify(envelope)
     stream.on('error', cb)
-    stream.on('data', (receivedEnvelope: messages.Envelope) => {
+    stream.on('data', (receivedEnvelope: Envelope) => {
       assert.deepStrictEqual(envelope, receivedEnvelope)
       cb()
     })
@@ -45,10 +44,10 @@ describe('NdjsonStream', () => {
     const stream = new MessageToNdjsonStream()
     stream.on('data', (json: string) => {
       const ob = JSON.parse(json)
-      const expected: messages.Envelope = {
+      const expected: Envelope = {
         testStepFinished: {
           testStepResult: {
-            status: messages.TestStepResultStatus.UNKNOWN,
+            status: TestStepResultStatus.UNKNOWN,
             duration: { nanos: 0, seconds: 0 },
           },
           testCaseStartedId: '1',
@@ -62,10 +61,10 @@ describe('NdjsonStream', () => {
       assert.deepStrictEqual(ob, expected)
       cb()
     })
-    const envelope: messages.Envelope = {
+    const envelope: Envelope = {
       testStepFinished: {
         testStepResult: {
-          status: messages.TestStepResultStatus.UNKNOWN,
+          status: TestStepResultStatus.UNKNOWN,
           duration: { nanos: 0, seconds: 0 },
         },
         testCaseStartedId: '1',
@@ -87,11 +86,7 @@ describe('NdjsonStream', () => {
 
     const incomingMessages = await toArray(toMessageStream)
 
-    assert.deepStrictEqual(incomingMessages, [
-      new Envelope(),
-      new Envelope(),
-      new Envelope(),
-    ])
+    assert.deepStrictEqual(incomingMessages, [new Envelope(), new Envelope(), new Envelope()])
   })
 
   it('includes offending error in message', async () => {
@@ -100,6 +95,6 @@ describe('NdjsonStream', () => {
       toMessageStream.write('{}\n  BLA BLA\n\n{}\n')
       toMessageStream.end()
       await toArray(toMessageStream)
-    }, /Unexpected token/)
+    }, /Not JSON: ' {2}BLA BLA'/)
   })
 })
