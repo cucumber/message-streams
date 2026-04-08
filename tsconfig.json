@@ -2,9 +2,7 @@
   "compilerOptions": {
     "declaration": true,
     "target": "es2018",
-    "lib": [
-      "es2019",
-    ],
+    "lib": ["es2019"],
     "sourceMap": true,
     "allowJs": false,
     "resolveJsonModule": true,

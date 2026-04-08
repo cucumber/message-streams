@@ -1,6 +1,6 @@
-import * as messages from '@cucumber/messages'
-import assert from 'assert'
-import { Transform } from 'stream'
+import assert from 'node:assert'
+import type { Transform } from 'node:stream'
+import { AttachmentContentEncoding, type Envelope, SourceMediaType } from '@cucumber/messages'
 
 import toArray from './toArray.js'
 
@@ -15,18 +15,18 @@ export default function verifyStreamContract(
 
       fromMessageStream.pipe(toMessageStream)
 
-      const outgoingMessages: messages.Envelope[] = [
+      const outgoingMessages: Envelope[] = [
         {
           source: {
             data: 'Feature: Hello',
             uri: 'hello.feature',
-            mediaType: messages.SourceMediaType.TEXT_X_CUCUMBER_GHERKIN_PLAIN,
+            mediaType: SourceMediaType.TEXT_X_CUCUMBER_GHERKIN_PLAIN,
           },
         },
         {
           attachment: {
             body: 'hello',
-            contentEncoding: messages.AttachmentContentEncoding.IDENTITY,
+            contentEncoding: AttachmentContentEncoding.IDENTITY,
             mediaType: 'text/plain',
           },
         },

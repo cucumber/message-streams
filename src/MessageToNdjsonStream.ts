@@ -1,5 +1,5 @@
-import * as messages from '@cucumber/messages'
-import { Transform, TransformCallback } from 'stream'
+import { Transform, type TransformCallback } from 'node:stream'
+import type { Envelope } from '@cucumber/messages'
 
 /**
  * Transforms a stream of message objects to NDJSON
@@ -9,13 +9,9 @@ export default class MessageToNdjsonStream extends Transform {
     super({ writableObjectMode: true, readableObjectMode: false })
   }
 
-  public _transform(
-    envelope: messages.Envelope,
-    encoding: string,
-    callback: TransformCallback
-  ) {
+  public _transform(envelope: Envelope, _encoding: string, callback: TransformCallback) {
     const json = JSON.stringify(envelope)
-    this.push(json + '\n')
+    this.push(`${json}\n`)
     callback()
   }
 }
