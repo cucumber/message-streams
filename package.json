@@ -17,7 +17,7 @@
     "build": "tsc --build tsconfig.build.json",
     "fix": "biome check --fix --error-on-warnings",
     "lint": "biome check --error-on-warnings",
-    "test": "mocha \"test/*Test.ts\"",
+    "test": "mocha \"src/**/*.spec.ts\" \"test/*Test.ts\"",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
     "@cucumber/biome-config": "cucumber/biome-config#v0.1.0",
     "@cucumber/messages": "^32.0.0",
     "@tsconfig/recommended": "^1.0.13",
+    "@types/mime": "^3.0.4",
     "@types/mocha": "10.0.10",
     "@types/node": "22.19.17",
     "mocha": "11.7.5",
@@ -38,5 +39,8 @@
     "url": "https://github.com/cucumber/message-streams/issues"
   },
   "homepage": "https://github.com/cucumber/message-streams#readme",
-  "keywords": []
+  "keywords": [],
+  "dependencies": {
+    "mime": "^3.0.0"
+  }
 }
