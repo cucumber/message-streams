@@ -6,11 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Add AttachmentExternalisingStream ([#89](https://github.com/cucumber/message-streams/pull/89))
+
 ### Removed
 - Remove support for Node.js 14
 
 ## [4.0.1] - 2022-03-31
-
 ### Changed
 - Peer dependency of @cucumber/messages is now more permissive and simply request any version greater than 17.1.1
 
@@ -21,14 +23,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - `@cucumber/messages`is now a peer dependency. You have to add `@cucumber/messages` in your dependencies:
-  ```diff
-  {
-    "dependencies": {
-  +   "@cucumber/messages": "17.1.1",
-      "@cucumber/message-streams": "4.0.0",
-    }
-  }
-  ```
+```diff
+{
+"dependencies": {
+  - "@cucumber/messages": "17.1.1",
+"@cucumber/message-streams": "4.0.0",
+}
+}
+```
 
 ### Deprecated
 
@@ -59,6 +61,3 @@ by ignoring certain lines.
 [2.1.0]: https://github.com/cucumber/message-streams/compare/v2.0.0...v2.1.0
 [2.0.0]: https://github.com/cucumber/message-streams/compare/v1.0.0...v2.0.0
 [1.0.0]: https://github.com/cucumber/message-streams/releases/tag/v1.0.0
-
-
-<!-- Contributors in alphabetical order -->
