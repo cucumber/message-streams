@@ -10,7 +10,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Add AttachmentExternalisingStream ([#89](https://github.com/cucumber/message-streams/pull/89))
 
 ### Removed
-- Remove support for Node.js 14
+- Remove support for Node.js < 22
 
 ## [4.0.1] - 2022-03-31
 ### Changed
