@@ -18,11 +18,34 @@ const encodingsMap: Record<string, BufferEncoding> = {
 }
 
 export interface AttachmentExternalisingStreamOptions {
+  /**
+   * Controls which attachments are externalised:
+   * - `false` (or omitted): pass through all messages unchanged
+   * - `true`: externalise every attachment
+   * - `ReadonlyArray<string>`: externalise only attachments whose `mediaType`
+   *   matches one of the given patterns (e.g. `['image/*', 'video/*']`),
+   *   where the subtype may be `*` to match any subtype
+   * @remarks
+   * Attachments with certain media types (e.g. `text/x.cucumber.log+plain`)
+   * are always kept inline regardless of this option.
+   */
   behaviour?: boolean | ReadonlyArray<string>
+  /**
+   * Directory to write externalised attachment files into
+   */
   directory: string
+  /**
+   * Function used to generate unique IDs for attachment filenames. Defaults
+   * to a UUID generator
+   */
   newId?: IdGenerator.NewId
 }
 
+/**
+ * A transform stream that externalises attachment bodies from a stream of
+ * {@link Envelope}s by writing them to files in a given directory and
+ * replacing each body with a relative URL pointing to the written file.
+ */
 export class AttachmentExternalisingStream extends Transform {
   private readonly writeOperations: Promise<void>[] = []
   private readonly options: Required<AttachmentExternalisingStreamOptions>
