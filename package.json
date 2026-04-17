@@ -30,7 +30,7 @@
     "@types/node": "22.19.17",
     "mocha": "11.7.5",
     "tsx": "^4.21.0",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   },
   "peerDependencies": {
     "@cucumber/messages": ">=17.1.1"
