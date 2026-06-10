@@ -1,5 +1,5 @@
 import assert from 'node:assert'
-import { Envelope, TestStepResultStatus } from '@cucumber/messages'
+import { type Envelope, TestStepResultStatus } from '@cucumber/messages'
 
 import { MessageToNdjsonStream } from '../src/index.js'
 import NdjsonToMessageStream from '../src/NdjsonToMessageStream.js'
@@ -86,7 +86,7 @@ describe('NdjsonStream', () => {
 
     const incomingMessages = await toArray(toMessageStream)
 
-    assert.deepStrictEqual(incomingMessages, [new Envelope(), new Envelope(), new Envelope()])
+    assert.deepStrictEqual(incomingMessages, [{}, {}, {}])
   })
 
   it('includes offending error in message', async () => {
