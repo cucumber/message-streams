@@ -4,9 +4,9 @@ import os from 'node:os'
 import path from 'node:path'
 
 import { type Attachment, AttachmentContentEncoding, type Envelope } from '@cucumber/messages'
-import toArray from '../test/toArray'
-import type { AttachmentExternalisingStreamOptions } from './AttachmentExternalisingStream'
-import { AttachmentExternalisingStream } from './AttachmentExternalisingStream'
+import toArray from '../test/toArray.js'
+import type { AttachmentExternalisingStreamOptions } from './AttachmentExternalisingStream.js'
+import { AttachmentExternalisingStream } from './AttachmentExternalisingStream.js'
 
 async function collectMessages(
   envelopes: Envelope[],

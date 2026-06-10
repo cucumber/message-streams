@@ -1,6 +1,6 @@
-import MessageToNdjsonStream from './MessageToNdjsonStream'
-import NdjsonToMessageStream from './NdjsonToMessageStream'
+import MessageToNdjsonStream from './MessageToNdjsonStream.js'
+import NdjsonToMessageStream from './NdjsonToMessageStream.js'
 
-export * from './AttachmentExternalisingStream'
+export * from './AttachmentExternalisingStream.js'
 
 export { MessageToNdjsonStream, NdjsonToMessageStream }
