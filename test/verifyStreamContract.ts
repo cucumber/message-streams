@@ -2,7 +2,7 @@ import assert from 'node:assert'
 import type { Transform } from 'node:stream'
 import { AttachmentContentEncoding, type Envelope, SourceMediaType } from '@cucumber/messages'
 
-import toArray from './toArray'
+import toArray from './toArray.js'
 
 export default function verifyStreamContract(
   makeFromMessageStream: () => Transform,

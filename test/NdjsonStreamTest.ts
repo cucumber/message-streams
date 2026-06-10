@@ -1,10 +1,10 @@
 import assert from 'node:assert'
 import { type Envelope, TestStepResultStatus } from '@cucumber/messages'
 
-import { MessageToNdjsonStream } from '../src'
-import NdjsonToMessageStream from '../src/NdjsonToMessageStream'
-import toArray from './toArray'
-import verifyStreamContract from './verifyStreamContract'
+import { MessageToNdjsonStream } from '../src/index.js'
+import NdjsonToMessageStream from '../src/NdjsonToMessageStream.js'
+import toArray from './toArray.js'
+import verifyStreamContract from './verifyStreamContract.js'
 
 describe('NdjsonStream', () => {
   const makeToMessageStream = () => new NdjsonToMessageStream()

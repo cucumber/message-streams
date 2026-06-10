@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- BREAKING CHANGE: Switch to ESM ([#96](https://github.com/cucumber/message-streams/pull/96))
 
 ## [4.1.1] - 2026-04-11
 ### Fixed
