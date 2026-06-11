@@ -28,7 +28,7 @@
     "@cucumber/messages": "^33.0.0",
     "@tsconfig/recommended": "^1.0.13",
     "@types/mocha": "10.0.10",
-    "@types/node": "22.19.20",
+    "@types/node": "22.19.21",
     "mocha": "11.7.6",
     "tsx": "^4.21.0",
     "typescript": "6.0.3"
