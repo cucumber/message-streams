@@ -8,34 +8,48 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ## [5.0.1] - 2026-06-20
+
 ### Fixed
+
 - Remove namespace imports from messages
 
 ## [5.0.0] - 2026-06-10
+
 ### Changed
+
 - BREAKING CHANGE: Switch to ESM ([#96](https://github.com/cucumber/message-streams/pull/96))
 
 ## [4.1.1] - 2026-04-11
+
 ### Fixed
+
 - Correct entry point references in package.json
 
 ## [4.1.0] - 2026-04-11
+
 ### Added
+
 - Add AttachmentExternalisingStream ([#89](https://github.com/cucumber/message-streams/pull/89))
 
 ### Removed
+
 - Remove support for Node.js < 22
 
 ## [4.0.1] - 2022-03-31
+
 ### Changed
+
 - Peer dependency of @cucumber/messages is now more permissive and simply request any version greater than 17.1.1
 
 ## [4.0.0] - 2022-03-16
+
 ### Added
+
 - Support for EcmaScript modules (aka ESM)
-([#1756](https://github.com/cucumber/common/pull/1756))
+  ([#1756](https://github.com/cucumber/common/pull/1756))
 
 ### Changed
+
 - `@cucumber/messages`is now a peer dependency. You have to add `@cucumber/messages` in your dependencies:
 ```diff
 {
@@ -53,17 +67,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 
 ## [3.0.0] - 2021-07-08
+
 ### Changed
+
 - Upgrade to messages v17.0.0
 
 ## [2.1.0] - 2021-05-30
+
 ### Added
+
 - The `NdjsonToMessageStream` constructor accepts an optional function for parsing
-a line, which may return null if a line is ignored. This can be used to improve performance
-by ignoring certain lines.
+  a line, which may return null if a line is ignored. This can be used to improve performance
+  by ignoring certain lines.
 
 ## [2.0.0] - 2021-05-17
+
 ### Changed
+
 - Upgrade to messages 16.0.0
 
 ## [1.0.0] - 2021-03-23
